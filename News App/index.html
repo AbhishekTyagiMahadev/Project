@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="flex">
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="main-nav flex">
+            <a href="#" id="toggle-side-bar">
+                <img id="side-bar-logo" src="assets/sidebar.svg" alt="side-bar">
+            </a>
+            <div>
+                <h1 class="heading" id="heading">Home</h1>
+            </div>
+            <div class="search-news" id="search-news">
+                <input type="text" id="input-news" class="input-news" placeholder="Search News...">
+                <a href="#" class="search-news-btn" id="search-news-btn"><i class="fa fa-search"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Sidebar -->
+        <div id="side-bar" class="side-bar">
+            <ul>
+                <li class="side-link" onclick="onSideItemClick('Sports')">Sports</li>
+                <li class="side-link" onclick="onSideItemClick('Finance')">Finance</li>
+                <li class="side-link" onclick="onSideItemClick('Tech')">Tech</li>
+                <li class="side-link" onclick="onSideItemClick('Education')">Education</li>
+                <li class="side-link" onclick="onSideItemClick('Politics')">Politics</li>
+                <li class="side-link" onclick="onSideItemClick('Economy')">Economy</li>
+                <li class="side-link" onclick="onSideItemClick('Crime')">Crime</li>
+                <li class="side-link" onclick="onSideItemClick('Health')">Health</li>
+            </ul>
+            <button id="toggle-weather" class="toggle-weather">Weather</button>
+        </div>
+
+        <!-- Weather App -->
+        <div id="weather-app" class="weather-app" style="display: none;">
+            <div class="search-weather">
+                <input type="text" class="input-weather" id="input-weather" placeholder="Enter location...">
+                <button class="fa-solid fa-magnifying-glass" id="search-weather-btn"></button>
+            </div>
+            <div class="location-not-found">
+                <h1>Sorry, Location not found!!!</h1>
+                <img src="/assets/404.png" alt="404 Error">
+            </div>
+            <div class="weather-body">
+                <img src="/assets/cloud.png" alt="Weather Image" class="weather-img">
+                <div class="weather-box">
+                    <p class="temperature">0 <sup>°C</sup></p>
+                    <p class="description">light rain</p>
+                </div>
+                <div class="weather-details">
+                    <div class="humidity">
+                        <i class="fa-sharp fa-solid fa-droplet"></i>
+                        <div class="text">
+                            <span id="humidity">45%</span>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="wind">
+                        <i class="fa-solid fa-wind"></i>
+                        <div class="text">
+                            <span id="wind-speed">12Km/H</span>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- News App -->
+        <div class="news-app" id="news-app">
+            <!-- News cards will be dynamically added here -->
+        </div>
+    </main>
+
+    <!-- News Card Template -->
+    <template id="template-news-card">
+        <div class="card" id="card">
+            <div class="card-header">
+                <img src="assets/image.jpg" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 23/02/2025</h6>
+                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
